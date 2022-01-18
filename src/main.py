@@ -1,5 +1,5 @@
 import psutil
-
+import threading
 
 ###
 #   findProcess(Nothing) -> process : Process 
@@ -46,7 +46,8 @@ def timeframe():
 ###
 #   getData(process : Process) -> 
 ###
-def getData():
+def getData(frequency):
+    threading.Timer(frequency, getData).start()
     return
 
 
