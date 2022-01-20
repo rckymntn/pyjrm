@@ -35,7 +35,7 @@ def timeframe():
         # Could this be caught if bad input returned -1 instead and the while loop was performed while frequency, duration <= 0? 
         # Yes. However, the procedure for handling user input would be less graceful. 
         # So instead we're returning and looping on None for bad input and keeping that consistent.
-        # Take this out later and justify in README, maybe with a concrete example
+        # Will take this out later and justify in README, maybe with a concrete example
         print("Invalid timeframe. Frequency and duration need to be a value greater than zero.")
         return None, None
     else:
@@ -46,8 +46,9 @@ def timeframe():
 ###
 #   getData(process : Process) -> 
 ###
-def getData(frequency):
-    threading.Timer(frequency, getData).start()
+def getData(process):
+    # cpu = psutil.Process(process.pid).cpu_percent() / psutil.cpu_count()
+    # mem = psutil.Process(process.pid).memory_percent() * psutil.virtual_memory()
     return
 
 
@@ -71,6 +72,8 @@ def main():
     frequency, duration = None, None
     while (frequency == None or duration == None):
         frequency, duration = timeframe()
+
+    getData(process)
 
     exit(0)
 
