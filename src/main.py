@@ -49,6 +49,8 @@ def timeframe():
 def getData(process):
     # cpu = psutil.Process(process.pid).cpu_percent() / psutil.cpu_count()
     # mem = psutil.Process(process.pid).memory_percent() * psutil.virtual_memory()
+    # net = psutil.Process(process.pid).connections() 
+    # mis = psutil.Process(process.pid).io_counters()
     return
 
 
