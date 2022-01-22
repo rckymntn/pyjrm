@@ -1,4 +1,5 @@
 import psutil
+import json
 import threading
 
 ###
@@ -45,13 +46,27 @@ def timeframe():
 
 ###
 #   getData(process : Process) -> 
+#
+#   https://psutil.readthedocs.io/en/latest/
 ###
 def getData(process):
+    p = psutil.Process(process)
+    with p.oneshot():
+        p.name()
+        p.pid()
+
+        p.cpu_times()
+        p.cpu_percent / psutil.cpu_count()
+
+        p.memory_info()
+        p.memory_percent() * psutil.virtual_memory()
+
+
+        return
     # cpu = psutil.Process(process.pid).cpu_percent() / psutil.cpu_count()
     # mem = psutil.Process(process.pid).memory_percent() * psutil.virtual_memory()
     # net = psutil.Process(process.pid).connections() 
-    # mis = psutil.Process(process.pid).io_counters()
-    return
+    # mis = psutil.Process(process.pid).net_io_counters()
 
 
 ###
