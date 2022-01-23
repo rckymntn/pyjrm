@@ -2,12 +2,12 @@
     "processName": "processName",
     "pid": "pid",
     "cpu": {
-
+        "cpuUsage": "00"
     },
     "mem": {
-
+        "memUsage": "00"
     },
     "net": {
-
+        "netUsage": "00"
     }
 }
