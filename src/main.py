@@ -2,6 +2,8 @@ import psutil
 import json
 import threading
 
+from psutil import cpu_count
+
 ###
 #   findProcess(Nothing) -> process : Process 
 ###
@@ -49,20 +51,17 @@ def timeframe():
 #
 #   https://psutil.readthedocs.io/en/latest/
 ###
-def getData(process):
-    p = psutil.Process(process)
+def getData(process, frequency):
+    p = psutil.Process(process.pid)
     with p.oneshot():
-        p.name()
-        p.pid()
-
-        p.cpu_times()
-        p.cpu_percent / psutil.cpu_count()
-
-        p.memory_info()
-        p.memory_percent() * psutil.virtual_memory()
+        data = {"name": p.name(),
+                "cpuTime": p.cpu_times(), 
+                "cpuUsage": p.cpu_percent() / psutil.cpu_count(), 
+                "memPercent": p.memory_percent()}
+        print(data)
+    return
 
 
-        return
     # cpu = psutil.Process(process.pid).cpu_percent() / psutil.cpu_count()
     # mem = psutil.Process(process.pid).memory_percent() * psutil.virtual_memory()
     # net = psutil.Process(process.pid).connections() 
@@ -90,7 +89,8 @@ def main():
     while (frequency == None or duration == None):
         frequency, duration = timeframe()
 
-    getData(process)
+
+    getData(process, frequency)
 
     exit(0)
 
