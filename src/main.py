@@ -2,8 +2,6 @@ import psutil
 import json
 import threading
 
-from psutil import cpu_count
-
 ###
 #   findProcess(Nothing) -> process : Process 
 ###
