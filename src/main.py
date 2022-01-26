@@ -45,7 +45,7 @@ def timeframe():
 
 
 ###
-#   getData(process : Process) -> 
+#   getData(process : Process) -> Nothing
 #
 #   https://psutil.readthedocs.io/en/latest/
 ###
