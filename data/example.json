@@ -1,13 +1,16 @@
 {
-    "processName": "processName",
-    "pid": "pid",
-    "cpu": {
-        "cpuUsage": "00"
-    },
-    "mem": {
-        "memUsage": "00"
-    },
-    "net": {
-        "netUsage": "00"
+    "dateTime": "dateTime",
+    "process": {
+        "processName": "processName",
+        "pid": "pid",
+        "cpu": {
+            "cpuUsage": "00"
+        },
+        "mem": {
+            "memUsage": "00"
+        },
+        "net": {
+            "netUsage": "00"
+        }
     }
 }
