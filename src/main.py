@@ -9,7 +9,6 @@ def findProcess():
     processName = input("Enter a process name: ")
     print("Searching for a process with the name {}.".format(processName))
     for process in psutil.process_iter():
-        #print(process.name)
         if processName == process.name():
             print("Process {} found.".format(processName))
             return process
@@ -58,12 +57,6 @@ def getData(process, frequency):
                 "memPercent": p.memory_percent()}
         print(data)
     return
-
-
-    # cpu = psutil.Process(process.pid).cpu_percent() / psutil.cpu_count()
-    # mem = psutil.Process(process.pid).memory_percent() * psutil.virtual_memory()
-    # net = psutil.Process(process.pid).connections() 
-    # mis = psutil.Process(process.pid).net_io_counters()
 
 
 ###
