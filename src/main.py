@@ -61,8 +61,16 @@ def getData(process, frequency):
 
 ###
 #   jsonify() -> Nothing
+#   
+#   dateTime, unique identifier. Using the process name or pid would yield repeats.
+#       processName 
+#       pid
+#           cpuUsage  
+#           memUsage
+#           netUsage
 ###
 def jsonify():
+    
     return
 
 
