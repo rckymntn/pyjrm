@@ -60,6 +60,9 @@ def getData(process, frequency):
 
 
 ###
+#
+#   See data/example.json 
+#
 #   jsonify() -> Nothing
 #   
 #   dateTime, unique identifier. Using the process name or pid would yield repeats.
